@@ -44,9 +44,6 @@
                             <a class="nav-link {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}" aria-current="page" href="/dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'dash' ? 'active' : '' }}" aria-current="page" href="/dash">Chart</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link {{ Request::segment(1) == 'profile' ? 'active' : '' }}" aria-current="page" href="/profile">Profile</a>
                         </li>
                         @if(Auth::user()->type == 'Admin')

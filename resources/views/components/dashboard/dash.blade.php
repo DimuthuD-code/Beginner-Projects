@@ -65,7 +65,7 @@
                     <div class="row">
                         <div class="col-md-9">
                             <h6 class="text-muted">Subjects</h6>
-                            <h2>1234</h2>
+                            <h2>{{ $subject_count }}</h2>
                         </div>
                         <div class="col-md-3">
                             <span class="border"><i class="fa-solid fa-book"></i></span>
@@ -101,7 +101,7 @@
                     <div class="row">
                         <div class="col-md-9">
                             <h6 class="text-muted">Districts</h6>
-                            <h2>1234</h2>
+                            <h2>{{ $district_count }}</h2>
                         </div>
                         <div class="col-md-3">
                             <span class="border"><i class="fa-solid fa-chart-area"></i></span>
@@ -118,7 +118,7 @@
         <div class="col col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <div id="teacher_chart" style="width:400px; height:300px;">
+                    <div id="teacher_chart">
 
                     </div>
                 </div>
@@ -127,7 +127,7 @@
         <div class="col col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <div id="student_chart" style="width:400px; height:300px;">
+                    <div id="student_chart">
 
                     </div>
                 </div>
@@ -136,28 +136,28 @@
     </div>
 </div>
 <script type="text/javascript">
-    var analytics = <?php echo $teacherprovince; ?>
+    var teachers = <?php echo $teacherprovince; ?>
 
     google.charts.load('current', {packages: ['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart()
     {
-        var data = google.visualization.arrayToDataTable(analytics);
+        var data = google.visualization.arrayToDataTable(teachers);
         var options = {title : 'Teacher Vs Province'};
         var chart = new  google.visualization.ColumnChart(document.getElementById('teacher_chart'));
         chart.draw(data, options);
     }
 </script>
 <script type="text/javascript">
-    var analytics = <?php echo $studentprovince; ?>
+    var students = <?php echo $studentprovince; ?>
 
     google.charts.load('current', {packages: ['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart()
     {
-        var data = google.visualization.arrayToDataTable(analytics);
+        var data = google.visualization.arrayToDataTable(students);
         var options = {title : 'Student Vs Province'};
         var chart = new  google.visualization.ColumnChart(document.getElementById('student_chart'));
         chart.draw(data, options);

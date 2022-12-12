@@ -34,7 +34,6 @@ Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 Route::post('custom-login', [CustomAuthController::class, 'custom_login'])->name('login.custom');
 
-Route::get('dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
 
 Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
@@ -123,4 +122,4 @@ Route::get('select_course/edit/{id}', [SelectCourseController::class, 'edit'])->
 Route::post('select_course/edit_validation', [SelectCourseController::class, 'edit_validation'])->name('select_course.edit_validation');
 
 
-Route::get('dash',[DashboardController::class, 'index'])->name('dash');
+Route::get('dashboard',[DashboardController::class, 'index'])->name('dashboard');
